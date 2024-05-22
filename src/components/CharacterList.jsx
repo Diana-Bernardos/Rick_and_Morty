@@ -6,7 +6,9 @@ const CharacterList = ({ data = [] }) => {
     <CharacterCard key={character.id} info={character} />
   ));
 
-  return <div>{html}</div>;
+  return (
+  <div>{html}</div>
+  )
 };
 
 export default CharacterList;

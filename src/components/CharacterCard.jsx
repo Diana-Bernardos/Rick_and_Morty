@@ -2,14 +2,14 @@
 
 const CharacterCard = ({info})=> {
   return (
-  
+  <div>
       <article>
-        <img src={info.imgage} alt="" />
+        <img src={info.image} alt="" />
         <p>{info.name}</p>
         <p>{info.species}</p>
       </article>
-  
+  </div>
   )
 }
 
-export default CharacterCard;
+export default CharacterCard

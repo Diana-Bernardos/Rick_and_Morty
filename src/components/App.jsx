@@ -9,23 +9,29 @@ import Filters from "./Filters";
 function App() {
 
 const [characterList , setCharacterList]=useState([]);
-
-console.log (characterList)
-
-
+const [filters,setFilters]=useState("")
 
 useEffect(()=>{
   getDataFromAPi().then((newArray) => { 
     setCharacterList(newArray)})
-   
 },[])
 
-
+const filterData = characterList.filter((item) => {
+  if (filters.length === 0) {
+    return item
+  } else {
+    return filters.includes(item.name)
+  }
+}).filter((item) => filters ? filters === item.name : true)
+console.log(filterData)
 
 
   return (
     <>
-      <CharacterList data={CharacterList}  />
+      <Filters setFilters={setFilters}/>
+      <CharacterList data={filterData}/>
+      
+      
     </>
   )
 }
