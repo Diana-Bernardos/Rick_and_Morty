@@ -8,8 +8,8 @@ function CharacterDetail({personDetail}) {
 
   return (
     personDetail ?(
-     
-    <div>
+      
+    <div className="photo">
       <h1>{personDetail.name}</h1>
       <img src={personDetail.image} alt=""/>
       <p>Species: {personDetail.species}</p>
@@ -17,7 +17,7 @@ function CharacterDetail({personDetail}) {
       <p>Origin: {personDetail.origin}</p>
       <p>Location: {personDetail.location}</p>
       <p>Episode:{personDetail.episode}</p>
-      <Link to="/">Volver</Link>
+     <Link to="/">Volver</Link>
     </div>
     )
     : <p>Personaje no encontrado</p>

@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const CharacterCard = ({info})=> {
   return (
-  
-      <article>
+  <div className="div">
+      <article className="article">
         <Link to={`/detail/${info.id}`}>
         <img src={info.image} alt="" />
         <p>{info.name}</p>
@@ -11,7 +11,7 @@ const CharacterCard = ({info})=> {
         
         </Link>
       </article>
-
+</div>
   )
 };
 

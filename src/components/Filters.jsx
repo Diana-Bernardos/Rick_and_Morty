@@ -7,11 +7,9 @@ function Filters ({filters,setFilters}){
   setFilters(ev.target.value);
 };
  
-
-
   return (
     <div>
-      <form>
+      <form className="form">
         <label htmlFor="filterInput"></label>
         <input type="text" id="filterInput" onChange={handleChange} value ={filters}/> 
 
