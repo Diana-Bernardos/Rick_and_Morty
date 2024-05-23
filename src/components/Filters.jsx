@@ -1,23 +1,23 @@
 
 
-function Filters ({setFilters}){
+function Filters ({filters,setFilters}){
 
 
-/* const handleFilters = (ev) => {
-  setFilters(ev.target.value)
-}
- */
+ const handleChange = (ev) => {
+  setFilters(ev.target.value);
+};
+ 
 
 
   return (
     <div>
       <form>
-        
-        <input type="text" name="" id="" onChange={(ev) => setFilters(ev.target.value)} />
+        <label htmlFor="filterInput"></label>
+        <input type="text" id="filterInput" onChange={handleChange} value ={filters}/> 
 
       </form>
     </div>
-  );
+  )
 }
 
 
