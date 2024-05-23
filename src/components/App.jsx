@@ -13,7 +13,7 @@ function App() {
 
   const [characterList, setCharacterList] = useState([]);
   const [filters, setFilters] = useState("");
-  const [species, setSpecies] = useState("Human");
+  const [species, setSpecies] = useState("All");
 
   useEffect(() => {
     getDataFromAPi().then((newArray) => {
@@ -26,11 +26,8 @@ function App() {
       item.name.toLowerCase().includes(filters.toLowerCase()) &&
     (species === "All" || item.species === species)
   );
+
 });
-
-
-    
-    
 
   const{pathname}= useLocation();
   // si coincide la ruta devuelve los parametros

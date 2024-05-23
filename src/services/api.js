@@ -13,7 +13,7 @@ const getDataFromAPi = () => {
             status:results.status,
             origin:results.origin.name,
             location:results.location.name,
-            episode:results.episode,
+            episode:results.episode[0],
             
           };
         });
