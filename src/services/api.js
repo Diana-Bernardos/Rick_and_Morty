@@ -10,6 +10,10 @@ const getDataFromAPi = () => {
             name: results.name,
             image:results.image,
             species:results.species,
+            status:results.status,
+            origin:results.origin.name,
+            location:results.location.name,
+            episode:results.episode,
             
           };
         });

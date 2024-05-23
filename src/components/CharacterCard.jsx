@@ -8,6 +8,7 @@ const CharacterCard = ({info})=> {
         <img src={info.image} alt="" />
         <p>{info.name}</p>
         <p>{info.species}</p>
+        
         </Link>
       </article>
 
