@@ -6,14 +6,14 @@ import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 import Filters from "./Filters";
 import Header from "./Header";
-
+import Species from "./Species";
 import { Routes, Route, useLocation, matchPath } from "react-router-dom";
 
 function App() {
 
   const [characterList, setCharacterList] = useState([]);
-  const [filters, setFilters] = useState("")
-
+  const [filters, setFilters] = useState("");
+  const [species, setSpecies] = useState("Human");
 
   useEffect(() => {
     getDataFromAPi().then((newArray) => {
@@ -22,9 +22,13 @@ function App() {
   }, [])
 
   const filteredData = characterList.filter((item) => {
-    return item.name.toLowerCase().includes(filters.toLowerCase());
+    return (
+      item.name.toLowerCase().includes(filters.toLowerCase()) &&
+    (species === "All" || item.species === species)
+  );
+});
 
-  });
+
     
     
 
@@ -41,7 +45,9 @@ function App() {
     <>
 
      <Routes>
-        <Route path="/" element={<><Filters filters={filters} setFilters={setFilters} />
+        <Route path="/" element={<>
+         <Filters filters={filters} setFilters= {setFilters} />
+          <Species species={species} setSpecies={setSpecies}/>
           <CharacterList data={filteredData} /></>} />
           <Route path="/detail/:id" element={<CharacterDetail personDetail={personDetail}/>}/> 
         <Route path="*" element={<h1>Not Found</h1>} />

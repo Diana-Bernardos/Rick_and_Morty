@@ -3,7 +3,11 @@
     margin: 0;
 }
 body{
-    background-color:black;
+   background-image:url(../images/fondo2.jpeg);
+   background-image: no-repeat;
+  
+   
+
 }
 .form{
     display: flex;
@@ -31,18 +35,18 @@ input{
 .div{
 display: flex;
 flex-direction: row;
+justify-content: center;
 flex-wrap: wrap;
 margin:15px;
 margin-top: 30px;
 border-color:greenyellow;
-border:solid;
+
 
 }
 img{
     width: 200px;
     margin:10px;
-    border-radius: 12px;
-    border-style:groove;
+    border-radius: 100px;
     margin-bottom: 20px;
   
 }
@@ -54,12 +58,15 @@ header{
     align-items: center;
     margin-top: 50px;
     padding: 40px;
+    
   
     
 }
 .morty{
-    width: 400px;
+    display: flex;
+    width: 700px;
     border: none;
+    opacity: 0.7;
 }
 a{
     text-decoration: none;
@@ -84,6 +91,24 @@ p{
     font-size: 20px;
     padding: 20px;
   
+}
+.divselect{
+    display:flex;
+    justify-content: center;
+   
+   
+
+}
+.select{
+    padding: 8px;
+    width: 200px; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(164, 246, 83);
+    border-radius: 12px;
+    text-align: center;
+    font-size: 18px;
+    color:rgb(41, 37, 37)
+
 }
 
     
