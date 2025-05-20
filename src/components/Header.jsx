@@ -1,11 +1,19 @@
 
 
+import { Link } from 'react-router-dom';
+
 function Header() {
   return (
-    <div>
-      <img src="../images/Rick_and_Morty_title_card_(cropped).png" alt="img" />
-    </div>
-  )
+    <header>
+      <Link to="/">
+        <img 
+          className="morty" 
+          src="../images/rick-and-morty-logo.png" 
+        
+        />
+      </Link>
+    </header>
+  );
 }
 
-export default Header
+export default Header;
