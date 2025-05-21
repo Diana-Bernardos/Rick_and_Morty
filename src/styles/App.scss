@@ -12,7 +12,6 @@ body {
 }
 
 .container {
-  
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
@@ -25,14 +24,17 @@ header {
   align-items: center;
   margin-top: 20px;
   padding: 20px;
-  
+
+  /* Ensure the logo image is displayed as a block and the path is correct in your HTML/JSX */
   .morty {
+    display: block;
     width: 100%;
     max-width: 700px;
     border: none;
     filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.5));
     transition: all 0.3s ease;
-    
+    background: none;
+
     &:hover {
       transform: scale(1.02);
       filter: drop-shadow(0 0 15px rgba(0, 255, 0, 0.8));
@@ -513,16 +515,8 @@ a {
 }
 
 /* Animación para el título */
-header 
-.morty {
-  
-  
+header .morty {
   animation: float 3s ease-in-out infinite;
-  width: 100%;
-  max-width: 700px;
-  height: 200px;
-  margin: 0 auto;
-  filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.5));
 }
 
 @keyframes float {

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 import Filters from "./Filters";
-import Header from "./Header";
+
 import Species from "./Species";
 import Pagination from "./Pagination";
 import Footer from "./Footer";
@@ -76,7 +76,7 @@ function App() {
       
       <div className="container">
         {/* Header siempre visible */}
-        <Header />
+        
         
         <Routes>
           {/* Página principal */}

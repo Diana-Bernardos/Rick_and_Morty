@@ -1,17 +1,16 @@
-
-
 import { Link } from 'react-router-dom';
+import "../images/rick-and-morty-logo.png";
 
 function Header() {
   return (
     <header>
-      <Link to="/">
+      
         <img 
           className="morty" 
           src="../images/rick-and-morty-logo.png" 
-        
+          alt="Rick and Morty Logo" 
         />
-      </Link>
+    
     </header>
   );
 }

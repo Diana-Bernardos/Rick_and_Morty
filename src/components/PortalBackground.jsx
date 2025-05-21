@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 function PortalBackground() {
-  // Crear partículas flotantes
+  // Crear efecto de partículas flotantes
   useEffect(() => {
     const createParticles = () => {
       const particlesContainer = document.querySelector('.particles');
@@ -10,43 +10,46 @@ function PortalBackground() {
       // Limpiar partículas existentes
       particlesContainer.innerHTML = '';
       
-      // Número de partículas basado en el tamaño de la pantalla
-      const particleCount = Math.floor(window.innerWidth / 20);
+      // Número de partículas según el tamaño de la ventana
+      const particleCount = Math.min(
+        Math.floor(window.innerWidth * window.innerHeight / 12000),
+        50
+      );
       
+      // Crear nuevas partículas
       for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         
         // Tamaño aleatorio
-        const size = Math.random() * 8 + 2;
+        const size = Math.random() * 6 + 2;
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
         
-        // Posición aleatoria
-        particle.style.left = `${Math.random() * 100}%`;
-        particle.style.top = `${Math.random() * 100}%`;
+        // Posición inicial aleatoria
+        const startX = Math.random() * window.innerWidth;
+        particle.style.left = `${startX}px`;
+        particle.style.bottom = '-20px';
         
-        // Duración aleatoria
-        const duration = Math.random() * 20 + 10;
-        particle.style.animationDuration = `${duration}s`;
-        
-        // Retraso aleatorio
+        // Duración y retraso aleatorios
+        const duration = Math.random() * 15 + 10;
         const delay = Math.random() * 10;
+        particle.style.animationDuration = `${duration}s`;
         particle.style.animationDelay = `${delay}s`;
         
+        // Añadir al DOM
         particlesContainer.appendChild(particle);
       }
     };
-
-    // Crear partículas al cargar y al cambiar tamaño
+    
+    // Inicializar y manejar redimensionamiento
     createParticles();
     window.addEventListener('resize', createParticles);
     
-    return () => {
-      window.removeEventListener('resize', createParticles);
-    };
+    // Limpiar al desmontar
+    return () => window.removeEventListener('resize', createParticles);
   }, []);
-
+  
   return (
     <>
       <div className="portal-background"></div>
